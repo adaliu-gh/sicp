@@ -1,0 +1,2 @@
+- Applicative-order evaluation :: infinite loop
+- Normal-order evaluation :: 0
