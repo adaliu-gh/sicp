@@ -1,0 +1,2 @@
+- a. :: 5
+- b. :: log (base 3) of a
