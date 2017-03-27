@@ -11,7 +11,5 @@
     (if (= counter n)
         a
         (expt-iter/a (* a b) (add1 counter))))
-  (cond
-   [(even? n) (expt-iter/a 1 0)]
-   [else (expt-iter/a b 1)]))
+  (expt-iter/a 1 0))
 
