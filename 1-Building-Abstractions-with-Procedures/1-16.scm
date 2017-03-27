@@ -1,15 +1,10 @@
 ;; Number -> Number
 ;; calculate the expt of a number b
-  (define (expt-iter b n)
-    (cond [(= n 0) 1]
-          [(even? n)
-           (expt-iter (expt b 2) (/ n 2))]
-          [else (* b (expt-iter b (- n 1)))]))
 
-(define (expt-iter.v2 b n)
-  (define (expt-iter/a a counter)
-    (if (= counter n)
-        a
-        (expt-iter/a (* a b) (add1 counter))))
-  (expt-iter/a 1 0))
-
+(define (fast-expt b n)
+  (define (fast-expt-iter a b n)
+    (cond
+     [(= 0 n) a]
+     [(even? n) (fast-expt-iter a (* b b) (/ n 2))]
+     [else (fast-expt-iter (* a b) b (- n 1))]))
+  (fast-expt-iter 1 b n))
