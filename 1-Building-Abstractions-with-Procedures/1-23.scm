@@ -46,8 +46,6 @@
 ;; 1000033 -> 0.134033203125 -> 0.06689453125
 ;; 1000037 -> 0.1259765625 -> 0.06689453125
 
-;; this result does not correspond to the theoretical order of growth - sqrt(10)
-
 ;;==================================
 
 ;; RACKET implementation of run-time of MIT
