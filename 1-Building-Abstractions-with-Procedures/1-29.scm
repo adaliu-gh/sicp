@@ -13,7 +13,7 @@
 ;; => 0.25333333333333335
 (exact->inexact (integral-simpson cube 0 1 1000) )
 ;; => 0.25033333333333335
-;; less precise compared to the procedure integral
+;; less precise compared to the procedure integral ???
 
 ;;=========================
 
