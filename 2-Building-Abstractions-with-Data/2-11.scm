@@ -1,4 +1,3 @@
-(require rackunit)
 (load "2-10.scm")
 
 (define (mul-interval/cond x y)
@@ -39,15 +38,15 @@
 (define i5 (make-interval 2 3))
 
 
-(check-equal? (mul-interval/cond i3 i3) (mul-interval i3 i3))
-(check-equal? (mul-interval/cond i3 i4) (mul-interval i3 i4))
-(check-equal? (mul-interval/cond i3 i5) (mul-interval i3 i5))
-(check-equal? (mul-interval/cond i4 i3) (mul-interval i4 i3))
-(check-equal? (mul-interval/cond i4 i4) (mul-interval i4 i4))
-(check-equal? (mul-interval/cond i4 i5) (mul-interval i4 i5))
-(check-equal? (mul-interval/cond i5 i3) (mul-interval i5 i3))
-(check-equal? (mul-interval/cond i5 i4) (mul-interval i5 i4))
-(check-equal? (mul-interval/cond i5 i5) (mul-interval i5 i5))
+(equal? (mul-interval/cond i3 i3) (mul-interval i3 i3))
+(equal? (mul-interval/cond i3 i4) (mul-interval i3 i4))
+(equal? (mul-interval/cond i3 i5) (mul-interval i3 i5))
+(equal? (mul-interval/cond i4 i3) (mul-interval i4 i3))
+(equal? (mul-interval/cond i4 i4) (mul-interval i4 i4))
+(equal? (mul-interval/cond i4 i5) (mul-interval i4 i5))
+(equal? (mul-interval/cond i5 i3) (mul-interval i5 i3))
+(equal? (mul-interval/cond i5 i4) (mul-interval i5 i4))
+(equal? (mul-interval/cond i5 i5) (mul-interval i5 i5))
 
 ;; all test past
 
