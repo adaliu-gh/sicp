@@ -1,3 +1,4 @@
+(load "2-33.scm")
 (define (fold-left op initial sequence)
   (define (iter result rest)
     (if (null? rest)
