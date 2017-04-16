@@ -9,3 +9,4 @@
 ;;============================
 ;; message passing
 ;; every new data-type only has to provide a dispatch function, that's all.
+;; but it is hard to add new generic procedure using message passing, because the procedure has to be enclosed in the data
