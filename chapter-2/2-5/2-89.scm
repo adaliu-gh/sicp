@@ -1,0 +1,13 @@
+(define (adjoin-term order coeff term-list)
+  (let ((len (length term-list)))
+    (cond
+     ((> order len) (error "xxx"))
+     ((= order len) (cons coeff term-list))
+     ((= order (- len 1)) (cons (add coeff (first-term term-list))
+                                (rest-terms term-list)))
+     (else (cons (first-term term-list)
+                 (adjoin-term order coeff (rest-terms term-list)))))))
+(define (the-empty-termlist) '())
+(define (first-term term-list) (car term-list))
+(define (rest-terms term-list) (cdr term-list))
+(define (empty-termlist? term-list) (null? term-list))
