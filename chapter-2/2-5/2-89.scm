@@ -1,6 +1,7 @@
 (define (adjoin-term order coeff term-list)
   (let ((len (length term-list)))
     (cond
+     ((=zero? coeff) term-list)
      ((> order len) (error "xxx"))
      ((= order len) (cons coeff term-list))
      ((= order (- len 1)) (cons (add coeff (first-term term-list))
