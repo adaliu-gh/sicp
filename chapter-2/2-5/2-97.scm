@@ -1,0 +1,15 @@
+(define (reduce-terms n d)
+  (let ((gcdterms (gcd-terms n d)))
+    (list (div-terms n gcdterms)
+          (div-terms d gcdterms))))
+
+(define (reduce-poly p1 p2)
+  (if (eq? (variable p1) (variable p2))
+      (let ((reduced-terms (reduce-terms (term-list p1) (term-list p2))))
+        (list (make-poly (variable p1) (car reduced-terms))
+              (make-poly (variable p2) (cadr reduced-terms))))
+      (error "xxx")))
+
+(define (make-rat a b)
+  (let ((reduced (reduce a b)))
+    (list (car reduced) (cadr (reduced)))))
