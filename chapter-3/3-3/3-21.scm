@@ -1,4 +1,3 @@
-;;============================
 (define (make-queue)
   (cons '() '()))
 (define (fron-ptr queue)
@@ -12,7 +11,7 @@
 
 (define (empty-queue? queue)
   (null? (fron-ptr queue)))
-(define (fron-queue queue)
+(define (front-queue queue)
   (if (empty-queue? queue)
       (error "the queue is empty")
       (car (fron-ptr queue))))
