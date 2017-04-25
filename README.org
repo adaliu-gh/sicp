@@ -15,6 +15,6 @@
 * chapter 3 - Modularity, Objects, and State 
 - 1. Assignment and Local State :: [[./chapter-3/3-1/3-1.scm][1]] [[./chapter-3/3-1/3-2.scm][2]] [[./chapter-3/3-1/3-3.scm][3]] [[./chapter-3/3-1/3-4.scm][4]] [[./chapter-3/3-1/3-5.scm][5]] [[./chapter-3/3-1/3-6.scm][6]] [[./chapter-3/3-1/3-7.scm][7]] [[./chapter-3/3-1/3-8.scm][8]]
 - 2. The Environment Model of Evaluation ::
-- 3. Modeling with Mutable Data :: [[./chapter-3/3-3/3-16.scm][16]] [[./chapter-3/3-3/3-17.scm][17]] [[./chapter-3/3-3/3-18.scm][18]]
+- 3. Modeling with Mutable Data :: [[./chapter-3/3-3/3-16.scm][16]] [[./chapter-3/3-3/3-17.scm][17]] [[./chapter-3/3-3/3-18.scm][18]] 19(later) [[./chapter-3/3-3/3-21.scm][21]]
 * [[http://icampustutor.csail.mit.edu/6.001-public/][Problem Set]] 
 - Procedures, procedures, procedures! :: [[./problem-set/2.scm][procedures]]
