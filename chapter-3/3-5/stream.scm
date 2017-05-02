@@ -3,11 +3,11 @@
       (stream-car s)
       (stream-ref (stream-cdr s) (- n 1))))
 
-(define (stream-map1 proc s)
-  (if (stream-null? s)
-      the-empty-stream
-      (cons-stream (proc (stream-car s))
-                   (stream-map1 proc (stream-cdr s)))))
+;;(define (stream-map1 proc s)
+  ;;(if (stream-null? s)
+      ;;the-empty-stream
+      ;;(cons-stream (proc (stream-car s))
+                   ;;(stream-map1 proc (stream-cdr s)))))
 
 (define (stream-for-each proc s)
   (if (stream-null? s)
@@ -81,3 +81,9 @@
 ;;(define-syntax cons-stream
   ;;(syntax-rules ()
     ;;((_ a b) (cons a (delay b)))))
+
+(define (display-stream-n stream n)
+  (if (= n 0)
+      'done
+      (begin (display-line (stream-car stream))
+             (display-stream-n (stream-cdr stream) (- n 1)))))
