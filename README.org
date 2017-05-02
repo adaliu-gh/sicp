@@ -17,6 +17,6 @@
 - 2. The Environment Model of Evaluation ::
 - 3. Modeling with Mutable Data :: [[./chapter-3/3-3/3-16.scm][16]] [[./chapter-3/3-3/3-17.scm][17]] [[./chapter-3/3-3/3-18.scm][18]] 19(later) [[./chapter-3/3-3/3-21.scm][21]] [[./chapter-3/3-3/3-22.scm][22]] [[./chapter-3/3-3/3-23.scm][23]] [[./chapter-3/3-3/3-24.scm][24]] [[./chapter-3/3-3/3-25.scm][25]] [[./chapter-3/3-3/3-28.scm][28]] [[./chapter-3/3-3/3-29.scm][29]] [[./chapter-3/3-3/3-30.scm][30]] [[./chapter-3/3-3/3-33.scm][33]] [[./chapter-3/3-3/3-35.scm][35]] [[./chapter-3/3-3/3-37.scm][37]]
 - 4. Concurrency ::  [[./chapter-3/3-4/3-38.scm][38]] [[./chapter-3/3-4/3-47.scm][47]] [[./chapter-3/3-4/3-48.scm][48]]
-- 5. Steams :: [[./chapter-3/3-5/3-50.scm][50]] [[./chapter-3/3-5/3-51.scm][51]] [[./chapter-3/3-5/3-52.scm][52]] [[./chapter-3/3-5/3-53.scm][53]]
+- 5. Steams :: [[./chapter-3/3-5/3-50.scm][50]] [[./chapter-3/3-5/3-51.scm][51]] [[./chapter-3/3-5/3-52.scm][52]] [[./chapter-3/3-5/3-53.scm][53]] [[./chapter-3/3-5/3-54.scm][54]] [[./chapter-3/3-5/3-55.scm][55]]
 * [[http://icampustutor.csail.mit.edu/6.001-public/][Problem Set]] 
 - Procedures, procedures, procedures! :: [[./problem-set/2.scm][procedures]]

@@ -22,8 +22,8 @@
   (newline)
   (display x))
 
-(define (cons-stream a b)
-  (cons a (delay b)))
+;;(define (cons-stream a b)
+  ;;(cons a (delay b)))
 
 (define (stream-car s)
   (car s))
@@ -44,11 +44,11 @@
                       (stream-filter pred (stream-cdr stream))))
         (else (stream-filter pred (stream-cdr stream)))))
 
-(define (delay exp)
-  (memo-proc (lambda () exp) ))
+;;(define (delay exp)
+  ;;(memo-proc (lambda () exp) ))
 
-(define (force delayed-object)
-  (delayed-object))
+;;(define (force delayed-object)
+  ;;(delayed-object))
 
 (define (memo-proc proc)
   (let ((already-run? false) (result false))
@@ -64,12 +64,20 @@
   (null? stream))
 
 (define (stream-map proc . argstreams)
-  (if (stream-empty? (car argstreams))
+  (if (stream-null? (car argstreams))
       the-empty-stream
       (cons-stream
        (apply proc (map stream-car argstreams))
        (apply stream-map
               (cons proc (map stream-cdr argstreams))))))
 
-(define (add-stream s1 s2)
+(define (add-streams s1 s2)
   (stream-map + s1 s2))
+
+;;(define-syntax delay
+  ;;(syntax-rules ()
+    ;;((_ exp) (lambda () exp))))
+;;
+;;(define-syntax cons-stream
+  ;;(syntax-rules ()
+    ;;((_ a b) (cons a (delay b)))))
