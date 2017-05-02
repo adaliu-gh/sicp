@@ -3,11 +3,11 @@
       (stream-car s)
       (stream-ref (stream-cdr s) (- n 1))))
 
-(define (stream-map proc s)
+(define (stream-map1 proc s)
   (if (stream-null? s)
       the-empty-stream
       (cons-stream (proc (stream-car s))
-                   (stream-map proc (stream-cdr s)))))
+                   (stream-map1 proc (stream-cdr s)))))
 
 (define (stream-for-each proc s)
   (if (stream-null? s)
@@ -15,7 +15,7 @@
       (begin (proc (stream-car s))
              (stream-for-each proc (stream-cdr s)))))
 
-(define (stream-display s)
+(define (display-stream s)
   (stream-for-each display-line s))
 
 (define (display-line x)
@@ -51,14 +51,25 @@
   (delayed-object))
 
 (define (memo-proc proc)
-  (let ((already-run? #false) (result #false))
+  (let ((already-run? false) (result false))
     (lambda ()
       (if already-run?
           result
           (begin (set! result (proc))
-                 (set! already-run? #true)
+                 (set! already-run? true)
                  result)))))
 (define the-empty-stream '())
 
 (define (stream-null? stream)
   (null? stream))
+
+(define (stream-map proc . argstreams)
+  (if (stream-empty? (car argstreams))
+      the-empty-stream
+      (cons-stream
+       (apply proc (map stream-car argstreams))
+       (apply stream-map
+              (cons proc (map stream-cdr argstreams))))))
+
+(define (add-stream s1 s2)
+  (stream-map + s1 s2))
