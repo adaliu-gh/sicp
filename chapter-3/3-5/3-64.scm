@@ -1,0 +1,6 @@
+(define (stream-limit stream tolerance)
+  (let ((s0 (stream-car stream))
+        (rest (stream-cdr stream)))
+    (if (< (abs (- s0 (stream-car rest))) tolerance)
+        (stream-car rest)
+        (stream-limit rest tolerance))))
