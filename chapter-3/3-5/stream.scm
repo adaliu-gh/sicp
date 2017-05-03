@@ -87,3 +87,18 @@
       'done
       (begin (display-line (stream-car stream))
              (display-stream-n (stream-cdr stream) (- n 1)))))
+(define integers (cons-stream 1 (add-streams ones integers)))
+
+(define ones (cons-stream 1 ones))
+
+(define (interleave s t)
+  (cons-stream
+   (stream-car s)
+   (interleave t (stream-cdr s))))
+
+(define (pairs s t)
+  (cons-stream (list (stream-car s) (stream-car t))
+               (interleave (stream-map
+                            (lambda (x) (list (stream-car s) x))
+                            (stream-cdr t))
+                           (pairs (stream-cdr s) (stream-cdr t)))))
