@@ -1,3 +1,4 @@
+(load "3-58.scm")
 ;; a
 (define (integral-series input)
   (define (recur coeffs count)
