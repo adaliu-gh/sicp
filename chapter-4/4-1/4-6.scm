@@ -1,6 +1,4 @@
 (define (let-package-install)
-  (define (make-let paras body)
-    (cons paras body))
   (define (let-body let)
     (cdr let))
   (define (let-parameters let)
@@ -16,7 +14,7 @@
         (cons (cadr (car paras))
               (let-expressions (cdr paras)))))
   (define (let->call let)
-    (let ((paras (let-package-install let)))
+    (let ((paras (let-paras let)))
       (make-call (make-lambda (let-variables paras)
                               (let-body let))
                  (let-expressions paras))))
@@ -25,4 +23,4 @@
 
   (define (tag x) (attach-tag 'let x))
   (put 'let 'eval eval-self)
-  (put 'let 'make (lambda (x y) (tag (make-let x y)))))
+  (put 'let 'make tag))
