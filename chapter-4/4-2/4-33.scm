@@ -1,0 +1,11 @@
+(define (eval-quote exp env)
+  (let ((value (cadr exp)))
+    (if (pair? value)
+        (make-list value)
+        value)))
+
+(define (make-list value)
+  (if (null? value)
+      '()
+      (list 'cons (quote (car value) )
+            (make-list (cdr value)))))
