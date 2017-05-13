@@ -1,3 +1,4 @@
+(load "ch4-ambeval.scm")
 (define (eight-queen-puzzle)
   (define (threatening-others? one others)
     (cond ((null? others) #f)
