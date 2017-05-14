@@ -1,0 +1,5 @@
+(rule (big-shot ?name ?division)
+      (and (job ?name (?division . ?rest))
+           (or (not (supervisor ?name ?boss))
+               (and (supervisor ?name ?boss)
+                    (not (job ?boss (?division . ?any)))))))
