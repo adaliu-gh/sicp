@@ -7,13 +7,13 @@
  (operations
   ((name +1) (inputs (register counter)))
   ((name *) (inputs (register counter) (register product)))
-  ((name >) (inputs (register counter) (constant N)))))
+  ((name >) (inputs (register counter) (reg N)))))
 
 (controller
  (assign product (const 1))
  (assign counter (const 1))
  test-counter
- (test (op >) (reg counter) (const N))
+ (test (op >) (reg counter) (reg N))
  (branch (lable fact-done))
  (assign product (op *) (reg counter) (reg product))
  (assign counter (op +1) (reg counter))
