@@ -58,7 +58,7 @@
                        (lambda () (stack 'initialize)))))
           (register-table
            (list (list 'pc pc) (list 'flag flag))))
-      (define (addlocate-register name)
+      (define (allocate-register name)
         (if (assoc name register-table)
             (error "xxx")
             (set! register-table

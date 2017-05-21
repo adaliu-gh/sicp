@@ -1,0 +1,8 @@
+(define (make-operation-exp exp machine labels operations)
+  (let ((op (lookup-prim (operation-exp-op exp) operations))
+        (operands (operation-exp-operands exp)))
+    (if (null? (filter (lambda (exp) (label-exp? exp)) operands) )
+        (let ((aprocs (map (lambda (e)
+                             (make-primitive-exp e machine labels)))))
+          (lambda () (apply op (map (lambda (p) (p)) aprocs))))
+        (error "xxx"))))
